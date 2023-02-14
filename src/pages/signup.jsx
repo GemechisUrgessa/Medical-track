@@ -13,6 +13,7 @@ import {
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
+import { validateEmail } from "../helpers/emailValidatte";
 import { resetSignupFormStatus, userSignup } from "../state/slices/user";
 
 function Signup() {
@@ -93,10 +94,8 @@ function Signup() {
   };
 
   let emailChangeHandler = (e) => {
-    let regex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-    let isValid = regex.test(e.target.value);
     setSignupDetails({ ...signupDetails, email: e.target.value });
-    if (!isValid) {
+    if (!validateEmail(e.target.value)) {
       setErrorDetails({
         ...errorDetails,
         email: {
@@ -217,7 +216,9 @@ function Signup() {
       >
         <Box>
           <Box display="flex" justifycontent="start">
-            <ArrowBack></ArrowBack>
+            <Button onClick={() => navigate('/login')}>
+              <ArrowBack></ArrowBack>
+            </Button>
           </Box>
           <Box display={"flex"} flexDirection="column" p={2}>
             <Typography my={0} sx={{ fontWeight: "800" }} variant="h6">
@@ -236,11 +237,11 @@ function Signup() {
             borderRadius={3}
           >
             <Typography p={1} variant="body1">
-              Sign-up with Google
+              {/* Sign-up with Google */}
             </Typography>
           </Box>
           <Box mt={6} display={"flex"} justifyContent="center">
-            <Typography color={"lightGray"}>
+            {/* <Typography color={"lightGray"}>
               {" "}
               _______________{" "}
               <Typography
@@ -251,7 +252,7 @@ function Signup() {
                 OR
               </Typography>{" "}
               _______________
-            </Typography>
+            </Typography> */}
           </Box>
 
           <Box
