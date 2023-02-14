@@ -1,4 +1,4 @@
-import { clientInstance } from "../config/config";
+import { clientInstance } from "../config/config.js";
 
 const deleteFile = (id) => {
   return clientInstance.delete(`/api/Document/${id}`);

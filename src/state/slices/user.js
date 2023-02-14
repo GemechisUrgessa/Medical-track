@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit"
-import { clientInstance } from "../../config/config"
+import { clientInstance } from "../../config/config.js"
 import { persistAuth, removeAuth } from "../../helpers/authPersistence"
 import { getProfileAPI, getUserDataAPI, loginAPI, profileUpdateAPI, SignupAPI } from "../../service/user"
 

@@ -11,7 +11,7 @@ const NotFound = () => {
       flexDirection={"column"}
       width="100%"
     >
-      <Typography m="auto" variant="h1">
+      <Typography data-testid="test"  m="auto" variant="h1">
         404
       </Typography>
       <Typography m="auto" variant="h2">
