@@ -3,6 +3,7 @@ import { render, screen } from '@testing-library/react';
 import Landing from '../pages/landing';
 import NotFound from '../pages/404';
 import { Route, Router, Routes, MemoryRouter, BrowserRouter } from 'react-router-dom';
+import Fill from '../pages/Fillinfo';
 
 import { createMemoryHistory } from 'history';
 // const history = createMemoryHistory();
@@ -30,6 +31,11 @@ const history = createMemoryHistory({
 // the page is render inside </BrowserRouter> </Routes> <Route path="/" element={<Landing />} />
 // and resolve TypeError: cannot read property of undefined(reading 'pathname')  
 
+// describe('Fill component', () => {
+  it('renders without crashing', () => {
+    const { container } = render(<Fill />);
+    expect(container).toBeDefined();
+  });
 
 test('renders landing page', () => {
   render(
