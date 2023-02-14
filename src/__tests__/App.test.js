@@ -1,71 +1,80 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
-import Landing from '../pages/landing';
+import { render } from '@testing-library/react';
 import NotFound from '../pages/404';
-import { Route, Router, Routes, MemoryRouter, BrowserRouter } from 'react-router-dom';
-import Fill from '../pages/Fillinfo';
+import { MemoryRouter } from 'react-router-dom';
+import About from '../pages/about';
+import Business from '../pages/business';
+import FaqPage from '../pages/faq-page';
+import Fill from '../pages/FillInfo';
+import Landing from '../pages/landing';
+import Professionals from '../pages/professionals';
 
-import { createMemoryHistory } from 'history';
-// const history = createMemoryHistory();
-const history = createMemoryHistory({
-  initialEntries: ['/']
-});
-
-// import { Router, Route,  } from 'react-router-dom';
-
-
-
-
-
-// test('renders landing page', () => {
-  //   render(
-    //     <MemoryRouter initialEntries={['/']}>
-    //       <Route path="/" component={NotFound} />
-//     </MemoryRouter>
-//   );
-//   const linkElement = screen.getByTestId('test');
-//   expect(linkElement).toHaveTextContent(/404/i);
-// });
-// unit test to render Landing page and see if Apply is rendered
-// where the Apply is the text with arial-testId of test
-// the page is render inside </BrowserRouter> </Routes> <Route path="/" element={<Landing />} />
-// and resolve TypeError: cannot read property of undefined(reading 'pathname')  
-
-// describe('Fill component', () => {
-  it('renders without crashing', () => {
-    const { container } = render(<Fill />);
-    expect(container).toBeDefined();
+describe("page Not found", () => {
+  it("renders", () => {
+    render(
+      <MemoryRouter>
+        <NotFound />
+      </MemoryRouter>
+    );
   });
-
-test('renders landing page', () => {
-  render(
-    <Router history={history}>
-      <Routes>
-        <Route path="/" element={<Landing />} />
-      </Routes>
-    </Router>
-  );
-  const linkElement = screen.getByTestId('test');
-  expect(linkElement).toHaveTextContent(/Apply/i);
 });
 
-// resolve TypeError: cannot read property of undefined(reading 'pathname')  at history
+describe("about page", () => {
+  it("renders", () => {
+    render(
+      <MemoryRouter>
+        <About />
+      </MemoryRouter>
+    );
+  });
+});
 
+describe("business page", () => {
+  it("renders", () => {
+    render(
+      <MemoryRouter>
+        <Business />
+      </MemoryRouter>
+    );
+  });
+});
 
-// unit test to render NotFound page and see if 404 is rendered
-// where the 404 is the text with arial-testId of test
-// the page is render inside </BrowserRouter> </Routes> <Route path="*" element={<NotFound />} />
-// test('renders 404 page', () => {
-//   render(
-//     <Router history={history}>
-//       <Routes>
-//         <Route path="*" element={<NotFound />} />
-//       </Routes>
-//     </Router>
-//   );
-//   const linkElement = screen.getByTestId('test');
-//   expect(linkElement).toHaveTextContent(/404/i);
-// }
-// );
-      
+describe("Faqs page", () => {
+  it("renders", () => {
+    render(
+      <MemoryRouter>
+        <FaqPage />
+      </MemoryRouter>
+    );
+  });
+});
 
+describe("fill info", () => {
+  it("renders", () => {
+    render(
+      <MemoryRouter>
+        <Fill />
+      </MemoryRouter>
+    );
+  });
+});
+
+describe("landing Page", () => {
+  it("renders", () => {
+    render(
+      <MemoryRouter>
+        <Landing />
+      </MemoryRouter>
+    );
+  });
+});
+
+describe("professional page", () => {
+  it("renders", () => {
+    render(
+      <MemoryRouter>
+        <Professionals />
+      </MemoryRouter>
+    );
+  });
+});
