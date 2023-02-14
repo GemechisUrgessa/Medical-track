@@ -1,4 +1,4 @@
-import { clientInstance, BASE_URL } from "../config/config";
+import { clientInstance, BASE_URL } from "../config/config.js";
 
 export let vaccinesListAPI = async (name) => {
   return clientInstance.get(`/api/Vaccine/search?name=${name}`);

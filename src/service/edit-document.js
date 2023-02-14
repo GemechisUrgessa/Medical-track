@@ -1,4 +1,4 @@
-import { clientInstance } from "../config/config";
+import { clientInstance } from "../config/config.js";
 
 const editFile = (document,documentTitle,documentType,description, documentId) => {
     let formData = new FormData();
