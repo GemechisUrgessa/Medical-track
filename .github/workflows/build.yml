@@ -8,10 +8,11 @@ on:
 jobs:
   sonarcloud:
     name: SonarCloud
-    runs-on: ubuntu-latest
+    runs-on: Linux 5.15.0-1031-azure amd64
     steps:
       - uses: actions/checkout@v2
         with:
+          projectBaseDir: .
           fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
       - name: Install dependencies
         run: yarn
