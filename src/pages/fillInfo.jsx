@@ -8,7 +8,7 @@ const Fill = () => {
     <>
       <CssBaseline />
       <Container maxWidth="xs">
-        <Grid container spacing={0} justifyContent="center" alignItems="center">
+        <Box container spacing={0} justifyContent="center" alignItems="center">
           <Box display="flex" justifyContent="center" alignItems="center">
             <ImageList
               styles={{ height: "1%", width: "2" }}
@@ -21,7 +21,7 @@ const Fill = () => {
               />
             </ImageList>
           </Box>
-        </Grid>
+        </Box>
       </Container>
       <main>
         <Container maxWidth="lg">
@@ -63,11 +63,11 @@ const Fill = () => {
             </Typography>
           </Container>
         </div>
-        <Grid Container spacing={2} align="center">
-          <Grid item>
+        <Box Container spacing={2} align="center">
+          <Box item>
             <Button variant="skip">Skip Tour</Button>
-          </Grid>
-        </Grid>
+          </Box>
+        </Box>
       </main>
     </>
   );
