@@ -12,12 +12,11 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         with:
-          projectBaseDir: .
           fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
       - name: Install dependencies
-        run: yarn
+        run: npm
       - name: Test and coverage
-        run: yarn run coverage
+        run: npm run coverage
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@master
         env:
